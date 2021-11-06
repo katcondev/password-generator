@@ -1,5 +1,3 @@
-// Assignment code here
-
 // Add event listener to generate button
 generate.addEventListener("click", writePassword);
 
@@ -18,9 +16,15 @@ function writePassword() {
 }
 
 //prompts for criteria for generating password
-
 function generatePassword() {
   var passwordLength = prompt("Enter the number of characters you want for your new password. It must be more than 12 but not less than 128!");
+
+  // Conditional Recursive Function Call
+  if (passwordLength === "" || passwordLength === null) {
+  window.alert("You need to provide a valid answer! Please try again.");
+  return generatePassword();
+  }
+
   var numbers = confirm("Do you want numbers in your password?");
   var lowerCases = confirm("Do you want lowercases in your password?");
   var upperCases = confirm("Do you want uppercases in your password?");
@@ -94,9 +98,6 @@ randomPasswordGenerated += minimumUpperCases;
 randomPasswordGenerated += minimumSpecialCharacters;
 
 return randomPasswordGenerated;
-
-
-
 }
 
 
