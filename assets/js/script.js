@@ -2,21 +2,41 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-    console.log("KISS it!");
+    
 
     //1. Prompt the user for the password criteria
-    var passwordLength = prompt("Enter the number of characters you want for your new password. It must be more than 12 but not less than 128!");
-    //   a. Password length 8 < 128
+    var passwordLength = prompt("Please enter the number of characters you want for your new password. It must be more than 8 but not more than 128!");
+    //   a. Password length 8 < 128 :: length of at least 8 characters and no more than 128 characters
+    if (passwordLength.length >= 8 && passwordLength.length <= 128) {
+      return true;
+    }
+
+    if (passwordLength.length >= 8 && passwordLength.length <= 128) {
+      return true;
+    }
     
+    else  {
+      window.alert("You need to provide a valid answer! Please try again.");
+    }
+
+    
+
+// Conditional Recursive Function Call
+  //else (passwordLength === "" || passwordLength === null) {
+  //window.alert("You need to provide a valid answer! Please try again.");
+  //return generatePassword();
+  //}
+
+
     //   b. Lowercase, uppercase, numbers, special characters
     //2. Validate the input.
     //3. Generate password based on criteria 
 
 
     //4. Display password to the page. 
-       return " Generated password will go here!" ;
+       //return generatePassword() ;
        
-}
+      };
 
 //write password to the #password input
 function writePassword() {
@@ -35,10 +55,6 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-
-// Add event listener to generate button
-//generate.addEventListener("click", writePassword);
-
 //special characters for function created 
 //const specialCharacters = "!@#$%^&*()"
 //const generateButton = document.getElementById('generate')
@@ -53,16 +69,11 @@ generateBtn.addEventListener("click", writePassword);
 
 //}
 
-//prompts for criteria for generating password
-//function generatePassword() {
-  //var passwordLength = prompt("Enter the number of characters you want for your new password. It must be more than 12 but not less than 128!");
 
-  
-  // Conditional Recursive Function Call
-  //if (passwordLength === "" || passwordLength === null) {
-  //window.alert("You need to provide a valid answer! Please try again.");
-  //return generatePassword();
-  //}
+
+
+
+
 
   //var numbers = confirm("Do you want numbers in your password?");
   //var lowerCases = confirm("Do you want lowercases in your password?");
