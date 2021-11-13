@@ -1,8 +1,50 @@
 //Assignment Code 
-var specialCharacters = [ '@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
+var specialCharacters = [ '@', '%', '+',
+  '\\',
+  '/',
+  "'",
+  '!',
+  '#',
+  '$',
+  '^',
+  '?',
+  ':',
+  ',',
+  ')',
+  '(',
+  '}',
+  '{',
+  ']',
+  '[',
+  '~',
+  '-',
+  '_',
+  '.',
+];
+
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-var lowerCasedCharacters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+var lowerCasedCharacters = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
   'u',
   'v',
   'w',
@@ -42,7 +84,7 @@ var upperCasedCharacters = [
 
 
 var generateBtn = document.querySelector("#generate");
-var possiblecharacters = [];
+var possiblecharacters = []
 
 
 function generatePassword() {
@@ -53,7 +95,7 @@ function generatePassword() {
     //*length of at least 8 characters and no more than 128 characters - validate the input.
     if (passwordLength < 8 || passwordLength > 128 || passwordLength === "" || passwordLength === null || isNaN (passwordLength)) {
       window.alert("You need to provide a valid answer! Please try again.");
-      return;
+      return generatePassword();
     }
 
     //*Lowercase, uppercase, numbers, special characters
@@ -61,7 +103,7 @@ function generatePassword() {
   var lowerCases = confirm("Do you want lowercases in your password?");
   var upperCases = confirm("Do you want uppercases in your password?");
   var special = confirm("Do you want special characters in your password?");
-  var password = [];
+  var password = []
   var counter = 0;
 
   if (numbers) { 
